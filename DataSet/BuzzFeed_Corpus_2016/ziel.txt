@@ -1,0 +1,2 @@
+Title, text, quelle, veracity
+Ich bin ein Title, hallo menschheit, http://abc.com, true

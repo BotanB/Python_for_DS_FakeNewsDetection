@@ -1,0 +1,6 @@
+# IPython
+.ipynb_checkpoints
+
+#IDE
+.idea/
+
