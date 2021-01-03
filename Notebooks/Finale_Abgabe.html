@@ -14404,7 +14404,7 @@ Siehe Link: <a href="https://www.uvic.ca/engineering/ece/isot/assets/docs/ISOT_F
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[102]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14432,6 +14432,10 @@ Siehe Link: <a href="https://www.uvic.ca/engineering/ece/isot/assets/docs/ISOT_F
 <span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">show</span>
 <span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">BasicTickFormatter</span>
 <span class="kn">from</span> <span class="nn">bokeh.transform</span> <span class="kn">import</span> <span class="n">cumsum</span>
+
+<span class="kn">from</span> <span class="nn">mlxtend.frequent_patterns</span> <span class="kn">import</span> <span class="n">association_rules</span>
+<span class="kn">from</span> <span class="nn">mlxtend.preprocessing</span> <span class="kn">import</span> <span class="n">TransactionEncoder</span>
+<span class="kn">from</span> <span class="nn">mlxtend.frequent_patterns</span> <span class="kn">import</span> <span class="n">apriori</span>
 
 <span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
 </pre></div>
@@ -14550,9 +14554,9 @@ Siehe Link: <a href="https://www.uvic.ca/engineering/ece/isot/assets/docs/ISOT_F
 
 
 
-<div id="b2d4946a-5b57-4d32-bdbc-167b8f631c7e" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div id="d0c764f6-00c9-40c3-bb39-bf54e17fbc3a" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
+var element = document.getElementById('d0c764f6-00c9-40c3-bb39-bf54e17fbc3a');
 
 (function(root) {
   function now() {
@@ -14975,6 +14979,12 @@ var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Durch die Funktion .shape werden die Dimensionen des Objekts angezeigt.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15012,6 +15022,12 @@ var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Das Objekt besteht aus 28711 Zeilen und 5 Spalten. Im nächsten Schritt werden die Spalten herausgegeben.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15734,7 +15750,9 @@ Das Format innerhalb des XML sieht folgendermaßen aus:</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a name="data_bis"></a></p>
-<h4 id="Cl&#233;ment-Bisaillon">Cl&#233;ment-Bisaillon<a class="anchor-link" href="#Cl&#233;ment-Bisaillon">&#182;</a></h4>
+<h4 id="Cl&#233;ment-Bisaillon">Cl&#233;ment-Bisaillon<a class="anchor-link" href="#Cl&#233;ment-Bisaillon">&#182;</a></h4><p>Die extrahierten Daten werden aus der bereitgestellten .csv (True.csv) in JupyterNotebook geladen und als Dataframe dargestellt.</p>
+<p>Um einen schnellen Überblick der Daten zu erhalten wird im ersten Schritt die .head() Funktion von Panda angewendet, die die ersten Zeilen des Dataframes ausgibt. Die Daten sind in folgende Spalten gegliedert: Title, Text, Subject und Date. Wird nur der Inhalt der Spalte "Text" betrachtet , so ist zu erkennen, dass zu Beginn des Textes die Quelle der Nachricht angegeben ist.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15835,6 +15853,12 @@ Das Format innerhalb des XML sieht folgendermaßen aus:</p>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Die Funktion info() wird verwendet, um eine Zusammenfassung des DataFrames "rawData_true" zu erhalten. Diese Methode gibt Informationen über den Dataframe aus, einschließlich des Index-D-Typs und der Spalten-D-Typen, der Nicht-Null-Werte und der Speichernutzung.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15883,7 +15907,9 @@ memory usage: 669.4+ KB
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-1:-Erweiterung-des-Dateframes-um-Spalte-&quot;veracitiy&quot;">Step 1: Erweiterung des Dateframes um Spalte "veracitiy"<a class="anchor-link" href="#Step-1:-Erweiterung-des-Dateframes-um-Spalte-&quot;veracitiy&quot;">&#182;</a></h5>
+<h5 id="Step-1:-Erweiterung-des-Dateframes-um-Spalte-&quot;veracitiy&quot;">Step 1: Erweiterung des Dateframes um Spalte "veracitiy"<a class="anchor-link" href="#Step-1:-Erweiterung-des-Dateframes-um-Spalte-&quot;veracitiy&quot;">&#182;</a></h5><p>Um das Zielformat CSV mit Spaltenbezeichnung: title, text, source, veracity zu erhalten, werden die Daten in den kommenden Schritten verarbeitet.</p>
+<p>Schritt 1: Das Dataframe wird um die Spalte "veracity" erweitert. Anschließend werden alle Zeilen des Dataframes mit "true" gelabelt.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -16014,7 +16040,8 @@ memory usage: 669.4+ KB
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-3:-Extrahierung-der-Quellenangabe-aus-Spalte-Text-mithilfe-von-Regex">Step 3: Extrahierung der Quellenangabe aus Spalte Text mithilfe von Regex<a class="anchor-link" href="#Step-3:-Extrahierung-der-Quellenangabe-aus-Spalte-Text-mithilfe-von-Regex">&#182;</a></h5><p>TODO Warum?</p>
+<h5 id="Step-3:-Extrahierung-der-Quellenangabe-aus-Spalte-Text-mithilfe-von-Regex">Step 3: Extrahierung der Quellenangabe aus Spalte Text mithilfe von Regex<a class="anchor-link" href="#Step-3:-Extrahierung-der-Quellenangabe-aus-Spalte-Text-mithilfe-von-Regex">&#182;</a></h5><p>Um die Quellenangabe für jede Nachricht zu erhalten, wird der Inhalt der Spalte "Text" mithilfe von regulären Ausdrücken in Text und Quelle separiert. Die Quellenangabe wird anschließend der Spalte "Source" zugewiesen.</p>
+<p>TODO Warum Reuters hier im code?</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16048,10 +16075,53 @@ memory usage: 669.4+ KB
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[98]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Anzahl Nachrichten die von der Quelle Reuters stammen: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">match</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Anzahl der Nachrichten ohne Quellenangabe oder die nicht von Reuters stammen: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nomatch</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Anzahl Nachrichten die von der Quelle Reuters stammen: 21247
+Anzahl der Nachrichten ohne Quellenangabe oder die nicht von Reuters stammen: 170
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-4:-Verwendet-werden-nur-die-von-Reuters">Step 4: Verwendet werden nur die von Reuters<a class="anchor-link" href="#Step-4:-Verwendet-werden-nur-die-von-Reuters">&#182;</a></h5><p>TODO: Warum nur die?</p>
+<h5 id="Step-4:-Verwendet-werden-nur-die-von-Reuters-und-Politische-News">Step 4: Verwendet werden nur die von Reuters und Politische News<a class="anchor-link" href="#Step-4:-Verwendet-werden-nur-die-von-Reuters-und-Politische-News">&#182;</a></h5><p>TODO: Warum nur die?</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Es werden nur Nachrichten mit Quellenangaben (Reuters) extrahiert.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16061,7 +16131,26 @@ memory usage: 669.4+ KB
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prepData_true_1</span> <span class="o">=</span> <span class="n">prepData_true</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">findrows_nomatch</span><span class="p">)</span>
-<span class="n">prepData_true_1</span> <span class="o">=</span> <span class="n">prepData_true_1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">prepData_true_1</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;politicsNews&quot;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Der Fokus wird auf politische Themen gesetzt.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prepData_true_1</span> <span class="o">=</span> <span class="n">prepData_true_1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">prepData_true_1</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;politicsNews&quot;</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16878,6 +16967,60 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ausgabe des Ergebnisses nach Anwendung der Funktion:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[99]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">newscompletedataset</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[99]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0        With the Hillary Clinton-Donald Trump debates ...
+1        As police today captured the man wanted for qu...
+2        One day after explosive devices were discovere...
+3        Ahmad Khan Rahami, earlier named a person of i...
+4        Donald Trump&#39;s surrogates and leading supporte...
+                               ...                        
+64930    st Century Wire says As WIRE reported earlier ...
+64931    st Century Wire says It s a familiar theme. Wh...
+64932    Patrick Henningsen  st Century WireRemember wh...
+64933    st Century Wire says Al Jazeera America will g...
+64934    st Century Wire says As WIRE predicted in its ...
+Name: text, Length: 64866, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h5 id="Step-3:-Normalisierung-der-Dateninhalte">Step 3: Normalisierung der Dateninhalte<a class="anchor-link" href="#Step-3:-Normalisierung-der-Dateninhalte">&#182;</a></h5><p>TODO Warum?</p>
 
 </div>
@@ -17137,9 +17280,9 @@ memory usage: 4.5+ MB
 
 
 
-<div id="b2d4946a-5b57-4d32-bdbc-167b8f631c7e" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div id="d0c764f6-00c9-40c3-bb39-bf54e17fbc3a" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
+var element = document.getElementById('d0c764f6-00c9-40c3-bb39-bf54e17fbc3a');
 (function(root) {
   function embed_document(root) {
     
@@ -17434,9 +17577,9 @@ dtype: int64</pre>
 
 
 
-<div id="b2d4946a-5b57-4d32-bdbc-167b8f631c7e" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div id="d0c764f6-00c9-40c3-bb39-bf54e17fbc3a" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
+var element = document.getElementById('d0c764f6-00c9-40c3-bb39-bf54e17fbc3a');
 (function(root) {
   function embed_document(root) {
     
@@ -17851,9 +17994,9 @@ var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
 
 
 
-<div id="b2d4946a-5b57-4d32-bdbc-167b8f631c7e" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div id="d0c764f6-00c9-40c3-bb39-bf54e17fbc3a" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
+var element = document.getElementById('d0c764f6-00c9-40c3-bb39-bf54e17fbc3a');
 (function(root) {
   function embed_document(root) {
     
@@ -18409,9 +18552,9 @@ var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
 
 
 
-<div id="b2d4946a-5b57-4d32-bdbc-167b8f631c7e" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
+<div id="d0c764f6-00c9-40c3-bb39-bf54e17fbc3a" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('b2d4946a-5b57-4d32-bdbc-167b8f631c7e');
+var element = document.getElementById('d0c764f6-00c9-40c3-bb39-bf54e17fbc3a');
 (function(root) {
   function embed_document(root) {
     
@@ -18592,7 +18735,8 @@ Durch das Tokenizen befinden sich hier noch unicode-reste. Diese müssen vom Dat
 <p><a name="ngramm"></a></p>
 <h4 id="N-Gramm-Ranking">N-Gramm-Ranking<a class="anchor-link" href="#N-Gramm-Ranking">&#182;</a></h4><p>Ein n-Gramm ist eine Folge von n Wörtern, wobei n eine diskrete Zahl ist, die von 1 bis unendlich reichen kann. Zum Beispiel ist das Wort "Baum" ein 1-Gramm (Unigramm). Die Kombination der Wörter "mit Baum" ist ein 2-Gramm (Bigram). Ähnlich ist "Sorte eines Baums" ein 3-Gramm (Trigramm).</p>
 <p>Beim N-Gramm-Ranking werden die N-Gramme danach geordnet, wie oft sie in der Sammlung der Fake Nachrichten und True Nachrichten vorkommen.</p>
-<h5 id="Step-1:-Trennen-nach-True-und-False">Step 1: Trennen nach True und False<a class="anchor-link" href="#Step-1:-Trennen-nach-True-und-False">&#182;</a></h5>
+<h5 id="Step-1:-Trennen-nach-True-und-False">Step 1: Trennen nach True und False<a class="anchor-link" href="#Step-1:-Trennen-nach-True-und-False">&#182;</a></h5><p>TODO Warum?</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -18646,7 +18790,8 @@ Durch das Tokenizen befinden sich hier noch unicode-reste. Diese müssen vom Dat
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-2:-Berechnen-der-N-Gramms">Step 2: Berechnen der N-Gramms<a class="anchor-link" href="#Step-2:-Berechnen-der-N-Gramms">&#182;</a></h5>
+<h5 id="Step-2:-Berechnen-der-N-Gramms">Step 2: Berechnen der N-Gramms<a class="anchor-link" href="#Step-2:-Berechnen-der-N-Gramms">&#182;</a></h5><p>Mit dem folgenden Code werden mit Hilfe der NLTK Bibliothek 2 Gramme sowie auch 3 Gramme gebildet und nach der Häufigkeit absteigend sortiert. Die häufigsten 10 n-Gramme der True-Nachrichten sowie auch der Fake-Nachrichten werden betrachtet.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -18668,7 +18813,8 @@ Durch das Tokenizen befinden sich hier noch unicode-reste. Diese müssen vom Dat
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-3:-Visualisierung">Step 3: Visualisierung<a class="anchor-link" href="#Step-3:-Visualisierung">&#182;</a></h5>
+<h5 id="Step-3:-Visualisierung">Step 3: Visualisierung<a class="anchor-link" href="#Step-3:-Visualisierung">&#182;</a></h5><p>Der folgende Code zeigt die Visualisierung der häufigsten 10 n-Gramme als Balkendiagramm. Auf der Y-Achse sind die n-gramms gelistet und auf der X-Achse ist die Anzahl der Vorkommnisse aufgezeigt. Die Darstellung zeigt die 10 häufigsten 2 gramms und darauffolgend die 10 häufigsten 3 grams.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -18805,7 +18951,8 @@ Durch das Tokenizen befinden sich hier noch unicode-reste. Diese müssen vom Dat
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-4:-Interpretation">Step 4: Interpretation<a class="anchor-link" href="#Step-4:-Interpretation">&#182;</a></h5><p>TODO</p>
+<h5 id="Step-4:-Interpretation">Step 4: Interpretation<a class="anchor-link" href="#Step-4:-Interpretation">&#182;</a></h5><p>Fünf der gelisteten 2-grams kommen sowohl bei den Fake-Nachrichten als auch bei den True-Nachrichten vor (Dobald, trump; hillari, clinton; unit, state; white-house; new, york). Die Häufigkeit varriiert, dies könnte auf die Verteilung im Datensatz zurückgeführt werden. Da es sich um Amerikanische Nachrichten mit der Hauptkategorie der Politik handelt, sind die Wörter nicht auffallend. Man kann hieraus zwar die Relevanz der Gesprächsthemen ableiten aber nicht ob es sich dadurch um ein Muster handelt.</p>
+<p>Auch die genaure Betrachtung der 3-grams zeigt kein Muster auf.</p>
 
 </div>
 </div>
@@ -20818,13 +20965,1167 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-8:-Visualisierung">Step 8: Visualisierung<a class="anchor-link" href="#Step-8:-Visualisierung">&#182;</a></h5><p>TODO</p>
+<h5 id="Step-8:-Assosiation-Rules">Step 8: Assosiation Rules<a class="anchor-link" href="#Step-8:-Assosiation-Rules">&#182;</a></h5><p>TODO: Was passiert hier?</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Step-9:-Interpretation">Step 9: Interpretation<a class="anchor-link" href="#Step-9:-Interpretation">&#182;</a></h5><p>TODO</p>
+<p>True News:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[103]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">te</span> <span class="o">=</span> <span class="n">TransactionEncoder</span><span class="p">()</span>
+<span class="n">te_ary</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset_true</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset_true</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">te_ary</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">te</span><span class="o">.</span><span class="n">columns_</span><span class="p">)</span>
+
+<span class="n">frequent_itemsets_true</span> <span class="o">=</span> <span class="n">apriori</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">min_support</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">use_colnames</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">frequent_itemsets_true</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[103]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.300638</td>
+      <td>(accord)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.246679</td>
+      <td>(ad)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.234676</td>
+      <td>(administr)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.204046</td>
+      <td>(allow)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.567653</td>
+      <td>(also)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2441</th>
+      <td>0.200912</td>
+      <td>(say, trump, said, donald, would)</td>
+    </tr>
+    <tr>
+      <th>2442</th>
+      <td>0.221177</td>
+      <td>(state, trump, said, donald, would)</td>
+    </tr>
+    <tr>
+      <th>2443</th>
+      <td>0.201695</td>
+      <td>(trump, said, trumpa, donald, would)</td>
+    </tr>
+    <tr>
+      <th>2444</th>
+      <td>0.207750</td>
+      <td>(trump, us, said, donald, would)</td>
+    </tr>
+    <tr>
+      <th>2445</th>
+      <td>0.200021</td>
+      <td>(presid, state, trump, said, would)</td>
+    </tr>
+  </tbody>
+</table>
+<p>2446 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">frequent_itemsets_true</span><span class="p">[</span><span class="s2">&quot;itemset_len&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequent_itemsets_true</span><span class="p">[</span><span class="s2">&quot;itemsets&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">frequent_itemsets_true</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[104]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+      <th>itemset_len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.300638</td>
+      <td>(accord)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.246679</td>
+      <td>(ad)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.234676</td>
+      <td>(administr)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.204046</td>
+      <td>(allow)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.567653</td>
+      <td>(also)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2441</th>
+      <td>0.200912</td>
+      <td>(say, trump, said, donald, would)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2442</th>
+      <td>0.221177</td>
+      <td>(state, trump, said, donald, would)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2443</th>
+      <td>0.201695</td>
+      <td>(trump, said, trumpa, donald, would)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2444</th>
+      <td>0.207750</td>
+      <td>(trump, us, said, donald, would)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2445</th>
+      <td>0.200021</td>
+      <td>(presid, state, trump, said, would)</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>2446 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[105]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">association_item2</span><span class="o">=</span> <span class="n">frequent_itemsets_true</span><span class="p">[</span> <span class="p">(</span><span class="n">frequent_itemsets_true</span><span class="p">[</span><span class="s1">&#39;itemset_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="n">association_item2</span><span class="o">=</span> <span class="n">association_item2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">association_item2</span> <span class="o">=</span> <span class="n">association_item2</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">association_item2</span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[105]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+      <th>itemset_len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1003</th>
+      <td>0.550664</td>
+      <td>(said, would)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>445</th>
+      <td>0.506999</td>
+      <td>(donald, trump)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>921</th>
+      <td>0.491078</td>
+      <td>(said, presid)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>978</th>
+      <td>0.480678</td>
+      <td>(said, state)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>991</th>
+      <td>0.479360</td>
+      <td>(said, us)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>0.477188</td>
+      <td>(said, also)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>987</th>
+      <td>0.471311</td>
+      <td>(said, trump)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>854</th>
+      <td>0.461873</td>
+      <td>(said, one)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>0.460697</td>
+      <td>(said, donald)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1004</th>
+      <td>0.457385</td>
+      <td>(said, year)</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[106]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">association_item3</span><span class="o">=</span> <span class="n">frequent_itemsets_true</span><span class="p">[</span> <span class="p">(</span><span class="n">frequent_itemsets_true</span><span class="p">[</span><span class="s1">&#39;itemset_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">association_item3</span><span class="o">=</span> <span class="n">association_item3</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">association_item3</span> <span class="o">=</span> <span class="n">association_item3</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">association_item3</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[106]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+      <th>itemset_len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1521</th>
+      <td>0.439969</td>
+      <td>(said, donald, trump)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1501</th>
+      <td>0.402856</td>
+      <td>(presid, donald, trump)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2045</th>
+      <td>0.374541</td>
+      <td>(said, presid, trump)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1497</th>
+      <td>0.372689</td>
+      <td>(said, presid, donald)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1271</th>
+      <td>0.359298</td>
+      <td>(said, would, also)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2052</th>
+      <td>0.354596</td>
+      <td>(said, presid, would)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1545</th>
+      <td>0.353243</td>
+      <td>(donald, trump, would)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2115</th>
+      <td>0.352637</td>
+      <td>(said, state, would)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2154</th>
+      <td>0.345585</td>
+      <td>(said, year, would)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>0.344944</td>
+      <td>(said, would, one)</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[107]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">association_item4</span><span class="o">=</span> <span class="n">frequent_itemsets_true</span><span class="p">[</span> <span class="p">(</span><span class="n">frequent_itemsets_true</span><span class="p">[</span><span class="s1">&#39;itemset_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)]</span>
+<span class="n">association_item4</span><span class="o">=</span> <span class="n">association_item4</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">association_item4</span> <span class="o">=</span> <span class="n">association_item4</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">association_item4</span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[107]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+      <th>itemset_len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2299</th>
+      <td>0.356840</td>
+      <td>(said, presid, donald, trump)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2326</th>
+      <td>0.316487</td>
+      <td>(said, donald, trump, would)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2309</th>
+      <td>0.291342</td>
+      <td>(presid, donald, trump, would)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2325</th>
+      <td>0.288599</td>
+      <td>(said, donald, trump, us)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2319</th>
+      <td>0.283613</td>
+      <td>(said, state, donald, trump)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2407</th>
+      <td>0.278057</td>
+      <td>(said, presid, trump, would)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2302</th>
+      <td>0.273284</td>
+      <td>(said, presid, donald, would)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2308</th>
+      <td>0.268512</td>
+      <td>(presid, donald, trump, us)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2305</th>
+      <td>0.268262</td>
+      <td>(presid, state, donald, trump)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2314</th>
+      <td>0.264665</td>
+      <td>(said, donald, trump, republican)</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Fake News</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[108]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">te</span> <span class="o">=</span> <span class="n">TransactionEncoder</span><span class="p">()</span>
+<span class="n">te_ary</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset_false</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset_false</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">te_ary</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">te</span><span class="o">.</span><span class="n">columns_</span><span class="p">)</span>
+
+
+<span class="n">frequent_itemsets_false</span> <span class="o">=</span> <span class="n">apriori</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">min_support</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">use_colnames</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">frequent_itemsets_false</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[108]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.211572</td>
+      <td>(accord)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.392457</td>
+      <td>(also)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.230715</td>
+      <td>(america)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.323404</td>
+      <td>(american)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.209476</td>
+      <td>(anoth)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>0.239428</td>
+      <td>(trump, would)</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>0.227420</td>
+      <td>(would, us)</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>0.213206</td>
+      <td>(year, would)</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>0.200163</td>
+      <td>(presid, donald, trump)</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>0.202097</td>
+      <td>(peopl, like, one)</td>
+    </tr>
+  </tbody>
+</table>
+<p>206 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[109]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">frequent_itemsets_false</span><span class="p">[</span><span class="s2">&quot;itemset_len&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequent_itemsets_false</span><span class="p">[</span><span class="s2">&quot;itemsets&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">frequent_itemsets_false</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[109]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+      <th>itemset_len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.211572</td>
+      <td>(accord)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.392457</td>
+      <td>(also)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.230715</td>
+      <td>(america)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.323404</td>
+      <td>(american)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.209476</td>
+      <td>(anoth)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>0.239428</td>
+      <td>(trump, would)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>0.227420</td>
+      <td>(would, us)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>0.213206</td>
+      <td>(year, would)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>0.200163</td>
+      <td>(presid, donald, trump)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>0.202097</td>
+      <td>(peopl, like, one)</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+<p>206 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[110]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">association_item_2_false</span><span class="o">=</span> <span class="n">frequent_itemsets_false</span><span class="p">[</span> <span class="p">(</span><span class="n">frequent_itemsets_false</span><span class="p">[</span><span class="s1">&#39;itemset_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="n">association_item_2_false</span><span class="o">=</span> <span class="n">association_item_2_false</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">association_item_2_false</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[110]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+      <th>itemset_len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>0.323812</td>
+      <td>(donald, trump)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>0.304071</td>
+      <td>(like, one)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>0.301784</td>
+      <td>(peopl, one)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>0.300585</td>
+      <td>(said, one)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>0.294758</td>
+      <td>(would, one)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>0.285146</td>
+      <td>(peopl, like)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>0.284983</td>
+      <td>(time, one)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>0.282560</td>
+      <td>(said, would)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>0.279564</td>
+      <td>(peopl, said)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>0.274854</td>
+      <td>(like, would)</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[111]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">association_item_3_false</span><span class="o">=</span> <span class="n">frequent_itemsets_false</span><span class="p">[</span> <span class="p">(</span><span class="n">frequent_itemsets_false</span><span class="p">[</span><span class="s1">&#39;itemset_len&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">association_item_3_false</span><span class="o">=</span> <span class="n">association_item_3_false</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">association_item_3_false</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[111]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>support</th>
+      <th>itemsets</th>
+      <th>itemset_len</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>205</th>
+      <td>0.202097</td>
+      <td>(peopl, like, one)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>0.200163</td>
+      <td>(presid, donald, trump)</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h5 id="Step-9:-Visualisierung">Step 9: Visualisierung<a class="anchor-link" href="#Step-9:-Visualisierung">&#182;</a></h5><p>TODO</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[155]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example</span>
+<span class="n">association_item3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;itemsets&#39;</span><span class="p">,</span> <span class="s1">&#39;support&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[155]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;AxesSubplot:xlabel=&#39;itemsets&#39;&gt;</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h5 id="Step-10:-Interpretation">Step 10: Interpretation<a class="anchor-link" href="#Step-10:-Interpretation">&#182;</a></h5><p>TODO</p>
 
 </div>
 </div>
